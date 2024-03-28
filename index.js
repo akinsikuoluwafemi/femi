@@ -1,28 +1,36 @@
 #!/usr/bin/env node
 
-const pkgJSON = require("./package.json");
-const welcome = require("cli-welcome");
+import pkgJSON from "./package.json" assert { type: "json" };
+import welcome from "cli-welcome";
+import chalk from "chalk";
+const log = console.log;
+const dim = chalk.dim;
+const italic = chalk.italic;
+
+const twitterClr = chalk.hex(`#1da1f2`).bold.inverse;
+const githubClr = chalk.hex(`#6cc644`).bold.inverse;
+const websiteClr = chalk.hex(`#6937FF`).bold.inverse;
 
 welcome({
-  title: pkgJSON.name,
+  title: `Femi Akinsiku`,
   tagLine: `Howdy, nice to meet ya!`,
   description: pkgJSON.description,
   version: pkgJSON.version,
-  bgColor: `#FADC00`,
+  bgColor: `#6937FF`,
   color: `#000000`,
   bold: true,
   clear: true,
 });
 
-console.log(`Femi Akinsiku
+log(`${italic(
+  `As a seasoned Full Stack Developer, I specialize in React, TypeScript, and Node.js technologies. With a track record of delivering innovative user interfaces and robust backend solutions, I excel in crafting seamless experiences from end to end. My passion for staying at the forefront of industry trends and leading cross-functional teams ensures the delivery of cutting-edge solutions that drive user satisfaction and business success.`
+)}
 
-
-As a seasoned Full Stack Developer, I specialize in React, TypeScript, and Node.js technologies. With a track record of delivering innovative user interfaces and robust backend solutions, I excel in crafting seamless experiences from end to end. My passion for staying at the forefront of industry trends and leading cross-functional teams ensures the delivery of cutting-edge solutions that drive user satisfaction and business success.
-
-🔗 Twitter: https://twitter.com/david_akinsiku
-⚓️ Github: https://github.com/akinsikuoluwafemi
-🧑‍💻 Website: https://femiakin.com/
+🔗 ${twitterClr(` Twitter `)} ${dim(`https://twitter.com/david_akinsiku`)}
+⚓️ ${githubClr(` Github `)} ${dim(`https://github.com/akinsikuoluwafemi`)}
+🧑‍💻 ${websiteClr(` Website `)} ${dim(`https://femiakin.com/`)}
 
 `);
 
+log(chalk.green.inverse.underline(`Thanks for stopping by!`));
 //npm link

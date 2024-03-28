@@ -2,10 +2,12 @@
   "name": "femiakinsiku",
   "version": "2.0.2",
   "description": "Get to know  Femi via `npx femiakin`",
+  "type": "module",
   "bin": {
     "femiakin": "index.js"
   },
   "dependencies": {
+    "chalk": "^5.3.0",
     "cli-welcome": "^2.2.2"
   },
   "keywords": [
