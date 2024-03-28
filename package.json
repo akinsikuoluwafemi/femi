@@ -13,5 +13,13 @@
     "femiakin",
     "femi",
     "akinsiku"
-  ]
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "akinsikuoluwafemi/femi",
+  "author": {
+    "name": "Akinsiku Oluwafemi",
+    "email": "akinsiku13@gmail.com",
+    "url": "https://femiakin.com"
+  }
 }
