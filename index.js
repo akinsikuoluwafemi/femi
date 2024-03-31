@@ -3,6 +3,7 @@
 import pkgJSON from "./package.json" assert { type: "json" };
 import welcome from "cli-welcome";
 import chalk from "chalk";
+import sym from "log-symbols";
 const log = console.log;
 const dim = chalk.dim;
 const italic = chalk.italic;
@@ -10,6 +11,13 @@ const italic = chalk.italic;
 const twitterClr = chalk.hex(`#1da1f2`).bold.inverse;
 const githubClr = chalk.hex(`#6cc644`).bold.inverse;
 const websiteClr = chalk.hex(`#6937FF`).bold.inverse;
+
+// alerts
+
+const success = chalk.green.inverse;
+const info = chalk.blue.inverse;
+const warning = chalk.yellow.inverse;
+const error = chalk.red.bold.inverse;
 
 welcome({
   title: `Femi Akinsiku`,
@@ -32,5 +40,17 @@ log(`${italic(
 
 `);
 
-log(chalk.green.inverse.underline(`Thanks for stopping by!`));
+log(`
+${sym.success} ${success(` SUCCESS `)} Thanks for checking out my CLI.
+
+${sym.info} ${info(` INFO `)}: I'm currently working on a new CLI. Stay tuned!
+
+${sym.warning} ${warning(
+  ` WARNING `
+)}: Please don't copy my CLI. Be creative and build your own.
+
+${sym.error} ${error(
+  ` ERROR `
+)}: If you have any questions, please reach out to me.
+`);
 //npm link
